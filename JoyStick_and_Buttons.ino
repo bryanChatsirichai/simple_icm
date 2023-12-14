@@ -146,12 +146,12 @@ int get_motor_calibration_menu1_update(int s){
       tft.fillScreen(ST77XX_BLACK);//clear screen
       updateMenu = true;
     }
-      if (digitalRead(Y_BUTTON) == LOW) {
-      //update 
-      s = 2;
-      tft.fillScreen(ST77XX_BLACK);//clear screen
-      updateMenu = true;
-    }
+    //   if (digitalRead(Y_BUTTON) == LOW) {
+    //   //update 
+    //   s = 2;
+    //   tft.fillScreen(ST77XX_BLACK);//clear screen
+    //   updateMenu = true;
+    // }
     return s;
 
     //Go Home menu (prev version with scroll)
@@ -263,22 +263,22 @@ int get_Action_screen_1_Menu_update(int s){
     tft.fillScreen(ST77XX_BLACK);//clear screen
     updateMenu = true;
   }
-  if (digitalRead(X_BUTTON) == LOW) {
-    //update 
-    s = 1;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-    if (digitalRead(Y_BUTTON) == LOW) {
-    //update 
-    s = 2;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
+  // if (digitalRead(X_BUTTON) == LOW) {
+  //   //update 
+  //   s = 1;
+  //   tft.fillScreen(ST77XX_BLACK);//clear screen
+  //   updateMenu = true;
+  // }
+  //   if (digitalRead(Y_BUTTON) == LOW) {
+  //   //update 
+  //   s = 2;
+  //   tft.fillScreen(ST77XX_BLACK);//clear screen
+  //   updateMenu = true;
+  // }
   return s;
 }
 
-int get_zoom_movements_menu1_update(int s){
+int get_lens_movements_menu1_update(int s){
   //Go Home menu
   if (digitalRead(CENTER_BUTTON) == LOW) {
       resetToHomeScreen();
@@ -321,7 +321,7 @@ int get_zoom_movements_menu1_update(int s){
   return s;
 }
 
-int get_zoom_movements_menu2_update(int s){
+int get_lens_movements_menu2_update(int s){
   //Go Home menu
   if (digitalRead(CENTER_BUTTON) == LOW) {
       resetToHomeScreen();
@@ -342,205 +342,6 @@ int get_zoom_movements_menu2_update(int s){
 
 
   //scroll up to zoom_movements_menu1
-  // -2 just a number to differentiate between -1s
-  if (digitalRead(UP_BUTTON) == LOW) {
-  //update 
-  s = -2;
-  tft.fillScreen(ST77XX_BLACK);//clear screen
-  updateMenu = true;
-  }
-
-  return s;
-}
-
-int get_focus_movements_menu1_update(int s){
-  //Go Home menu
-  if (digitalRead(CENTER_BUTTON) == LOW) {
-      resetToHomeScreen();
-      s = -1;
-      updateMenu = true;
-    }
-
-  if (digitalRead(A_BUTTON) == LOW) {
-    s = 0;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(B_BUTTON) == LOW) {
-    //update 
-    s = 1;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(X_BUTTON) == LOW) {
-    //update 
-    s = 2;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(Y_BUTTON) == LOW) {
-    //update 
-    s = 3;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  } 
-
-    //scroll down to focus_movements_menu2
-    if (digitalRead(DOWN_BUTTON) == LOW) {
-    //update 
-    s = 4;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-
-  return s;
-}
-
-int get_focus_movements_menu2_update(int s){
-  //Go Home menu
-  if (digitalRead(CENTER_BUTTON) == LOW) {
-      resetToHomeScreen();
-      s = -1;
-      updateMenu = true;
-  }
-  if (digitalRead(A_BUTTON) == LOW) {
-    s = 0;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(B_BUTTON) == LOW) {
-    //update 
-    s = 1;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-
-
-  //scroll up to focus_movements_menu1
-  // -2 just a number to differentiate between -1s
-  if (digitalRead(UP_BUTTON) == LOW) {
-  //update 
-  s = -2;
-  tft.fillScreen(ST77XX_BLACK);//clear screen
-  updateMenu = true;
-  }
-
-  return s;
-}
-
-int get_zoomfocus_movements_menu1_update(int s){
-  //Go Home menu
-  if (digitalRead(CENTER_BUTTON) == LOW) {
-      resetToHomeScreen();
-      s = -1;
-      updateMenu = true;
-    }
-
-  if (digitalRead(A_BUTTON) == LOW) {
-    s = 0;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(B_BUTTON) == LOW) {
-    //update 
-    s = 1;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(X_BUTTON) == LOW) {
-    //update 
-    s = 2;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(Y_BUTTON) == LOW) {
-    //update 
-    s = 3;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  } 
-
-    //scroll down 
-    if (digitalRead(DOWN_BUTTON) == LOW) {
-    //update 
-    s = 4;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-
-  return s;
-}
-
-int get_zoomfocus_movements_menu2_update(int s){
-  //Go Home menu
-  if (digitalRead(CENTER_BUTTON) == LOW) {
-      resetToHomeScreen();
-      s = -1;
-      updateMenu = true;
-    }
-
-  if (digitalRead(A_BUTTON) == LOW) {
-    s = 0;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(B_BUTTON) == LOW) {
-    //update 
-    s = 1;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(X_BUTTON) == LOW) {
-    //update 
-    s = 2;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(Y_BUTTON) == LOW) {
-    //update 
-    s = 3;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  } 
-    //scroll up 
-    // -2 just a number to differentiate between -1
-    if (digitalRead(UP_BUTTON) == LOW) {
-    //update 
-    s = -2;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-    }
-
-    //scroll down 
-    if (digitalRead(DOWN_BUTTON) == LOW) {
-    //update 
-    s = 4;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-
-  return s;
-}
-
-int get_zoomfocus_movements_menu3_update(int s){
-  //Go Home menu
-  if (digitalRead(CENTER_BUTTON) == LOW) {
-      resetToHomeScreen();
-      s = -1;
-      updateMenu = true;
-  }
-  if (digitalRead(A_BUTTON) == LOW) {
-    s = 0;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  if (digitalRead(B_BUTTON) == LOW) {
-    //update 
-    s = 1;
-    tft.fillScreen(ST77XX_BLACK);//clear screen
-    updateMenu = true;
-  }
-  //scroll up 
   // -2 just a number to differentiate between -1s
   if (digitalRead(UP_BUTTON) == LOW) {
   //update 
