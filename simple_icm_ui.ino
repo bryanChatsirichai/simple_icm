@@ -7,6 +7,7 @@
 #include <EEPROM.h>
 #include "SoftwareSerial.h"
 
+//simple icm, only 1 motor
 
 // Motor Parameters
 #define MOTOR_STEPS 200 //
