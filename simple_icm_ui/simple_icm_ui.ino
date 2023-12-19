@@ -24,10 +24,9 @@
 #define TFT_SCLK 10 // Clock out
 
 /* Motor Pins */
-#define rear_DIR    6
-#define rear_STEP   7
-#define front_DIR   0
-#define front_STEP  1
+#define motor_DIR    6
+#define motor_STEP   7
+
 
 //Display Joystick 
 #define UP_BUTTON 2
@@ -120,7 +119,7 @@ int symbol_size = 20;
 
 
 /* Motor Objects*/
-AccelStepper main_motor(AccelStepper::DRIVER, rear_STEP, rear_DIR);
+AccelStepper main_motor(AccelStepper::DRIVER, motor_STEP, motor_DIR);
 
 
 /* Display Object, set up the displat init */

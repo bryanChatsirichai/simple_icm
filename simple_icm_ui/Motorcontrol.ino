@@ -119,7 +119,12 @@ void setAccel(float accel) {
 void setCurrentPos(float value) {
   AccelStepper *stepper;
   stepper = &main_motor;
-  stepper->setCurrentPosition(value);
+  if(orientation == 0 ){
+    stepper->setCurrentPosition(value);
+  }
+  else{
+    stepper->setCurrentPosition(-value);
+  }
 }
 
 
